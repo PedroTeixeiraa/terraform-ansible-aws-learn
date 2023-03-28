@@ -14,11 +14,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0735c191cf914754d"
+  ami           = "ami-0fcf52bcf5db7b003"
   instance_type = "t2.micro"
   key_name =  "pedro-terraform"
 
   tags = {
-    Name = "Primeira instancia"
+    Name = "Terraform Ansible Python"
   }
 }

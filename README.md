@@ -25,10 +25,21 @@ sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt-get install ansible
 ```
-Para instalar e configurar a AWS CLI, você pode seguir as instruções disponíveis na documentação oficial da AWS.
+
+## Confirar AWS CLI
+Para configurar o AWS CLI, [acesse a página da AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/getting-started-install.html) e siga os procedimentos para o seu sistema operacional.   
+
+Depois de instalado, você pode configurar a AWS usando o comando `aws configure`, onde será solicitado a chave secreta (secret key) que pode ser criada na [página de credenciais do AWS IAM](https://console.aws.amazon.com/iam/home?#/security_credentials).
+
 
 ## Configuração
-Antes de criar a instância na AWS, você precisa alterar a variável `key_name` do arquivo `main.tf` com o nome da chave gerada na AWS.
+
+Após a criação da chave na AWS, precisamos dar as devidas permissões conforme o script abaixo:
+```bash
+chmod 400 <chave>
+```
+
+Antes de criar a instância na AWS, você precisa colocar a chave gerada na raiz do projeto e posteriormente você precisa alterar a variável `key_name` do arquivo `main.tf` com o nome da chave gerada na AWS.
 
 Depois de configurar a variável `key_name`, você pode criar a instância executando os seguintes comandos:
 
